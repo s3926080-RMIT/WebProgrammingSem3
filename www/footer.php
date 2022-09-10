@@ -14,16 +14,16 @@
 </head>
 <body>
 <footer>
-        <div class="container">
-            <div class="row">
-                <div class="footer__links">
-                    <li><a href="">About</a></li>
-                    <li><a href="">Copyright</a></li>
-                    <li><a href="">Privacy</a></li>
-                    <li><a href="">Help Links</a></li>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="footer__links">
+                <li><a href="">About</a></li>
+                <li><a href="">Copyright</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Help Links</a></li>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

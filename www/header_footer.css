@@ -184,6 +184,7 @@ FOOTER
 
 footer{
     background-color: #333;
+    width: 100%;
 }
 
 .footer__links{
@@ -197,7 +198,7 @@ footer{
 }
 
 th, td {
-    border: 50px solid ;
+    border: 50px solid;
     border-color: #333;
     border-radius: 10px;
 }
