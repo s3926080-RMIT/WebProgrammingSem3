@@ -133,7 +133,7 @@ function createUser($file, $name, $username, $address, $password) {
     $userlist2 = file ('accounts.db');
     $file = fopen("user_accounts.txt", "a");
     $mainfile = fopen("accounts.db", "a");
-    $text = $user_input . "|" . $password . "|" . $name . "|" . $address . "|" . $profilepic . "|" . "\n";
+    $text = $user_input . "|" . $password . "|" . $name . "|" . $address . "|" . "\n";
     fwrite($file, $text . "\n");
     fclose($file);
     fwrite($mainfile, $text . "\n");
