@@ -5,7 +5,7 @@ if (isset($_POST["submit"])) {
     $address = $_POST["address"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
-    $profilepic = $_POST["profilepic"];
+   
 
     require_once 'functions.inc.php';
     $file = file('user_accounts.txt');
