@@ -1,10 +1,4 @@
 <?php include_once "header.php" ?>
-<?php
-    $_SESSION['cartArray'] = array();
-    $_SESSION['orderArray'] = array();
-    $_SESSION['distributionHub'] = array();
-    $_SESSION['distributionHub'] = file("distribution.txt");
-?>
 <!DOCTYPE html>
 <head>
     <meta charset='utf-8'>
@@ -18,7 +12,7 @@
 <body>
     <div class="top">
         <h1>List of Products</h1>
-        <form action="customer.php" method="get">
+        <form action="customer_page.php" method="get">
             <input class="search-bar" type="text" name="searchTerm" placeholder="Search for products">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
@@ -66,11 +60,9 @@
         }
     }
 
-    
-
-    if (isset($_GET["searchTerm"]) == true){
+    if (isset($_GET["searchTerm"]) === true){
         for ($m = 0; $m < $count; $m++){
-            $pos = strpos(strtolower($productList[$m][2]),strtolower($_GET["searchTerm"]));
+            $pos = strpos(strtolower($productList[$m][1]),strtolower($_GET["searchTerm"]));
             echo "<div class='product-containers'>";
             if ($pos == true){
                 for ($n = 0; $n < 6; $n++){
@@ -78,7 +70,9 @@
                     echo $productList[$m][$n];
                     echo "</div>";
                 }
-            echo "</div>";
+                echo "<form method='post'> <input class='addtocartBtn' type='submit' name='submit' value='Add to Cart'> <input type='hidden' name='addCart' value=$i> </form>";
+                echo "</div>";
+                echo "<br>";
             }
         }
     }

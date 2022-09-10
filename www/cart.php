@@ -27,7 +27,8 @@
       for ($i = 0; $i < count($cartList); $i++){
         echo "<div class='product'>";
         echo "<div class='prodImg'>";
-        echo "<img src='Photos/img . $cartList[$i][4]'>";
+        $string = $cartList[$i][3];
+        echo "<img src=$string>";
         echo "</div>";
         echo "<div class='prodName'>";
         echo $cartList[$i][1];
@@ -49,8 +50,10 @@
         echo $cartList[$i][2];
         echo "</div>";
         echo "</div>";
-        $total_money += $cartList[$i][2] * $_POST['quantity'][$i];
-      
+        if (isset($_POST['quantity'])){
+          $total_money += $cartList[$i][2] * $_POST['quantity'][$i];
+        }
+          
       }
     ?>
     <div class="totals">
