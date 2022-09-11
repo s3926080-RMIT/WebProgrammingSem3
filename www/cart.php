@@ -21,7 +21,7 @@
     } 
   }
 ?>
-  <form method='post' action='cart.php'>
+  <form method='post' action='thankyou.php'>
     <?php
       $total_money = 0;
       for ($i = 0; $i < count($cartList); $i++){
