@@ -86,13 +86,27 @@ h1{
 
 .orderContainers p{
     width: calc(100% / 4);
-    text-align: right;
+    text-align: center;
 }
 
 .buttonContainer{
     text-align: right;
 }
 
-form[input='submit']{
-    padding: 16px ;
+
+input[type='submit']{
+    margin: 10px;
+    font-size: 30px;
+    padding: 10px;
 }
+
+p:last-of-type img{
+    width: 180px;
+    height: 180px;
+}
+
+hr{
+    height: 15px;
+    background-color: goldenrod;
+}
+
