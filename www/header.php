@@ -43,8 +43,6 @@ session_start();
                     else if (isset($_SESSION["shippername"])) {
                         $username = $_SESSION["shippername"];
                         echo "<li class='welcome_message'>Hi $username</li>";
-                        echo "<li><a  href='userprofile.php'>Shipper Account</a></li>";
-                        echo "<li><a  href='shipper.php'> Shipper </a></li>"; 
                         echo "<li><a  href='includes/logout.inc.php'>Log Out</a></li>";                   
                     }
                     else if (isset($_SESSION["vendorname"])) {
