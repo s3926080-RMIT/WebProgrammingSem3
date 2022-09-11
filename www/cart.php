@@ -20,13 +20,14 @@
     } 
   }
 ?>
-  <form method='post' action='thankyou.php'>
+  <form method='post'>
     <?php
       $total_money = 0;
       for ($i = 0; $i < count($cartList); $i++){
         echo "<div class='product'>";
         echo "<div class='prodImg'>";
         $str = $cartList[$i][3];
+        echo $str;
         echo "<img src=product_images/$str>";
         echo "</div>";
         echo "<div class='prodName'>";
@@ -77,6 +78,7 @@
     fwrite($orderFile, "-----------\n");
     
     fclose($orderFile);
+    $_SESSION['cartArray'] = array();
   }
 
   
