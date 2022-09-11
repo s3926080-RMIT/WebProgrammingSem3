@@ -12,7 +12,7 @@ function invalidUsername($username) {
 
 function checkAddressLength($address) {
     $result;
-    if (strlen($password) < 5) {
+    if (strlen($address) < 5) {
         $result = true;
     }
     else {
