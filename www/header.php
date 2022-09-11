@@ -56,8 +56,8 @@ session_start();
                     }
 
                     else{
-                        echo "<li><a  href='register.php'>Sign up</a></li>";
-                        echo "<li><a  href='login.php'>Login</a></li>";
+                        echo "<li><a  href='index.php'>Sign up</a></li>";
+                        echo "<li><a  href='index.php'>Login</a></li>";
                     }
                 ?>
 

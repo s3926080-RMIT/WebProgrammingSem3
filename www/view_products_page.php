@@ -17,8 +17,8 @@
         }else{
             $username = "";
             echo "<div class='login_options'>";
-            echo "<a href='register.php' class='button' id='fbuttons'>Sign up</a>";
-            echo "<a href='login.php' class='button' id='fbuttons'>Login</a>";
+            echo "<a href='index.php' class='button' id='fbuttons'>Sign up</a>";
+            echo "<a href='index.php' class='button' id='fbuttons'>Login</a>";
             echo "</div>";
             echo "<br>";
             echo "<br>";

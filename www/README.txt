@@ -8,4 +8,4 @@ Nguyen Hoang Khanh Duc - s3926243 : 25%
 
 start host locally, 
 
-Start the web by going to the choose_type.php 
+Start the web by going to the index.php 
