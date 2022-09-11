@@ -56,9 +56,9 @@
       <input type="password" name="spassword" required placeholder="Enter your password">
       <input type="password" name="cpassword" required placeholder="Confirm your password">
       <select name="distribution_hub">
-         <option value="deliverA">Distribution Hub A</option>
-         <option value="deliverB">Distribution Hub B</option>
-         <option value="deliverC">Distribution Hub C</option> 
+         <option value="distribution_hubA">Distribution Hub A</option>
+         <option value="distribution_hubB">Distribution Hub B</option>
+         <option value="distribution_hubC">Distribution Hub C</option> 
          <input type="submit" name="submit" value="register now" class="form-btn">
       </select>
       <p>Already have an account? <a href="shipper_login.php">Login here</a></p>
