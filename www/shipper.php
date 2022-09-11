@@ -18,8 +18,7 @@
     if (empty($file)){
         echo "No available orders.";
     } else{
-
-    
+        
         foreach ( $file as $order1 ) {
             $liveOrders[] = array_filter(array_map("trim", explode("\n", $order1)));
         }
@@ -31,30 +30,46 @@
         }
         $updatedOrders = array();
         $updatedOrders = $liveOrders;
+        $hubArray = $_SESSION['distributionHub'];
+
         
-        foreach ($liveOrders as $firstLayer => $layerIndex) {
-            echo "<div class='userOrders'>";
-            foreach ($layerIndex as $secondLayer => $deeperLayer) {
-                echo "<div class='orderContainers'>";
-                foreach ($deeperLayer as $thirdLayer => $finalLayer){
-                    echo "<p>";
-                    echo $liveOrders[$firstLayer][$secondLayer][$thirdLayer];
-                    echo "</p>";
-                }
-                echo "</div>";
+        if (empty($_SESSION['indexArray'])){
+            foreach ($liveOrders as $firstLayer => $layerIndex) {
+                array_push($_SESSION['indexArray'], $hubArray[array_rand($hubArray)]);
             }
+        }
+        $indexArray = $_SESSION['indexArray'];
+        
+        foreach ($indexArray as $index => $disHub){
+            echo "<div class='userOrders'>";
             
-            echo "<div class = buttonContainer>";
-            echo "<form method='post' action='shipper.php'>";
-            echo "<input type='submit' name='submit' value='Delivered'>";
-            echo "<input type='submit' name='submit' value='Cancelled'>";
-            echo "<input type='hidden' name='orderNumber' value=$firstLayer>";
-            echo "<input type='hidden' name='numberOfItems' value=$secondLayer>";
-            echo "</form>";
-            echo "</div>";
-            echo "</div>";
-            echo "<br>";
-        }  
+            if ($disHub == $_SESSION['shipperHub']) {
+                foreach ($liveOrders[$index] as $secondLayer => $deeperLayer)
+                    echo "<div class='orderContainers'>";
+                    foreach ($deeperLayer as $thirdLayer => $finalLayer){
+                        echo "<p>";
+                        echo $liveOrders[$index][$secondLayer][$thirdLayer];
+                        echo "</p>";
+                    }
+                echo "</div>";
+                echo "<div class = buttonContainer>";
+                echo "<form method='post' action='shipper.php'>";
+                echo "<input type='submit' name='submit' value='Delivered'>";
+                echo "<input type='submit' name='submit' value='Cancelled'>";
+                echo "<input type='hidden' name='orderNumber' value=$index>";
+                echo "</form>";
+                echo "</div>";
+                echo "</div>";
+                echo "<br>";
+                }
+       if (empty($indexArray)){
+            echo "No available orders.";
+        }
+    }
+}
+        
+            
+        
     ?> 
     
     <?php
@@ -81,8 +96,7 @@
                 file_put_contents('orders.txt', '');
             }
         }
-    }
-    ?>
     
+    ?>
     
 <?php include_once "footer.php" ?>
