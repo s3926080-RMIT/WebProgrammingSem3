@@ -46,7 +46,11 @@ if (isset($_POST["submit"])) {
     if (checkPasswordLength($password) !== false) {
         header("location: ../register.php?error=invalidpasswordlength");
         exit();
-    }         
+    }
+    if (checkAddressLength($address) !== false) {
+        header("location: ../register.php?error=invalidaddresslength");
+        exit();
+    }  
     createUser($file, $name, $username, $address, $password);
         header("location: ../register.php?error=none");
       
