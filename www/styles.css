@@ -155,3 +155,29 @@
 
 }
 
+
+/*
+
+Responsive
+
+*/
+
+@media screen and (max-width: 1023px) {
+   .search_box{
+      display: none;
+   }
+
+   .nav__links{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 300px;
+   }
+
+   
+}
+
+
+@media screen and (max-width:767px ) {
+   
+}
