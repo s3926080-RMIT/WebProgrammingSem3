@@ -27,8 +27,8 @@
       for ($i = 0; $i < count($cartList); $i++){
         echo "<div class='product'>";
         echo "<div class='prodImg'>";
-        $string = $cartList[$i][3];
-        echo "<img src=$string>";
+        $str = $cartList[$i][3];
+        echo "<img src=product_images/$str>";
         echo "</div>";
         echo "<div class='prodName'>";
         echo $cartList[$i][1];
@@ -41,9 +41,6 @@
         echo "</div>";
         echo "<div class='prodQuant'>";
         echo "<input type='number' name='quantity[]' value='1' min='1'>";
-        echo "</div>";
-        echo "<div class='prodDel'>";
-        echo "<button class='remove-product'>Remove</button>";
         echo "</div>";
         echo "</div>";
         echo "<div class='prodIndTotal'>";
@@ -74,7 +71,7 @@
     $orderList = $_SESSION['cartArray'];
     for ($k = 0; $k < count($orderList); $k++){
       //          product ID                product name              product quantity             product price              product image
-      $text = $orderList[$k][0] . "|" . $orderList[$k][1] . "|" .  $_POST['quantity'][$k] . "|" . $orderList[$k][2] . "|" . $orderList[$k][3] . "\n";
+      $text = $orderList[$k][0] . "|" . $orderList[$k][1] . "|" .  $_POST['quantity'][$k] . "|" . $orderList[$k][2] . "|" . "<img src=product_images/" . $orderList[$k][3] . ">" . "\n";
       fwrite($orderFile, $text . "");
     }
 
