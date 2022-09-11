@@ -62,9 +62,10 @@
 
     if (isset($_GET["searchTerm"]) === true){
         for ($m = 0; $m < $count; $m++){
+            
             $pos = strpos(strtolower($productList[$m][1]),strtolower($_GET["searchTerm"]));
-            echo "<div class='product-containers'>";
             if ($pos == true){
+                echo "<div class='product-containers'>";
                 for ($n = 0; $n < 6; $n++){
                     echo "<div class='productElements'>";
                     echo $productList[$m][$n];
