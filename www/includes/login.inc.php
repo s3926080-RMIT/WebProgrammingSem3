@@ -12,7 +12,12 @@ if (isset($_POST["submit"])) {
         exit();
     }
     else {
+        $_SESSION['cartArray'] = array();
+        $_SESSION['orderArray'] = array();
+        $_SESSION['distributionHub'] = array();
+        $_SESSION['distributionHub'] = file("distribution.txt");
         header("location: ../userprofile.php");
+        
     }
 
 }
