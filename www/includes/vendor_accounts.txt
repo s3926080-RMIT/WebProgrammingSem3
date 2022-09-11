@@ -30,3 +30,9 @@ Shipper2|Shipping1!|deliver|
 
 Shipper2|Shipping1!|deliver|
 
+ik43Furniture|TheAnh28!|IkaeFurniture|abcdef
+
+h4n0iPiCi|TheAnh28!|HanoiPC|Hanoi
+
+SGsp0rtsstore|TheAnh28!|SaigonSports|HoChiMinhCity
+
