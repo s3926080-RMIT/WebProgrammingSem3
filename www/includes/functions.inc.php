@@ -10,6 +10,17 @@ function invalidUsername($username) {
     return $result;
 }
 
+function checkAddressLength($address) {
+    $result;
+    if (strlen($password) < 5) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
 function checkUsernameUppercase($username) {
     $result;
     if (!preg_match("/[A-Z]/", $username)) {
