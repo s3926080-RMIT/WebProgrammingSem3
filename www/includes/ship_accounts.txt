@@ -1,6 +1,3 @@
-Shipper1|Shipping1!|deliver|
+Shipper7|Hoang24!|distribution_hubA|
 
-Shipper3|hOANG24!|deliver|
-
-Shipper4|Hoang24!|deliver|
-
+Shipper1|Hoang24!|distribution_hubA|
