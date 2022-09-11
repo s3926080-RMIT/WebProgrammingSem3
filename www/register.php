@@ -48,6 +48,9 @@
       else if ($_GET["error"] == "invalidpasswordlength") {
          echo "<p> Password length needs to be between 8 and 20 characters</p>";
       }
+      else if ($_GET["error"] == "invalidaddresslength") {
+         echo "<p> Address length needs to be longer than 5 characters</p>";
+      }
    }
    ?>
    </br>
