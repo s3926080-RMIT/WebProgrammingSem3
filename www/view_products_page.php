@@ -17,8 +17,8 @@
         }else{
             $username = "";
             echo "<div class='login_options'>";
-            echo "<a href='register.php'>Sign up</a>";
-            echo "<a href='login.php'>Login</a>";
+            echo "<a href='register.php' class='button' id='fbuttons'>Sign up</a>";
+            echo "<a href='login.php' class='button' id='fbuttons'>Login</a>";
             echo "</div>";
             echo "<br>";
             echo "<br>";
@@ -55,7 +55,7 @@
         foreach ($products_list as $p){
             if($p->pVendor == $username . "\n"){
                 echo "<div class='item'>\n";
-                echo "<img src=$p->pImage>\n";
+                echo "<img src=product_images/$p->pImage>\n";
                 echo "<div class= 'item-description'>";
                 echo "<p class='itemID'>  ID: ", $p->pID, "</p>\n";
                 echo "<h3 class='itemName'> Name: ", $p->pName, "</h3>\n";

@@ -132,3 +132,16 @@ a{
 .login_options{
     text-align: center;
 }
+
+#fbuttons{
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+#fbuttons:hover{
+    color: goldenrod;
+}

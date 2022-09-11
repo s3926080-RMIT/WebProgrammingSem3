@@ -11,38 +11,23 @@
 <body>
     <br><br>
     <h1>Add New Product</h1>
-    <!-- <div class='container'>
-        <div class='row'>
-            <form action='add_products_page.php' method='post'>
-                <span>Enter product name: </span>
-                <input type='text' id='name' name='name' minlength='10' maxlength='20'><br>
-                <span>Enter price: </span>
-                <input type='number' id='price' name='price' min='0'><br>
-                <span>Select product image: </span>
-                <input type='file' id='img' name='img' accept='image/*'><br>
-                <span>Enter product despcriptions: </span>
-                <textarea name='descriptions' id='descriptions' cols='30' rows='10' maxlength='500'></textarea><br>
-                <input type='submit'>
-            </form>
-        </div>
-    </div> -->
     <?php
         if (isset($_SESSION["vendorname"])){
-            echo "<div class='container'>\n";
-            echo "<div class='row'>\n";
-            echo "<form action='add_products_page.php' method='post'>\n";
-            echo "<span>Enter product name: </span>\n";
-            echo "<input type='text' id='name' name='name' minlength='10' maxlength='20'><br>\n";
-            echo "<span>Enter price: </span>\n";
-            echo "<input type='number' id='price' name='price' min='0'><br>\n";
-            echo "<span>Select product image: </span>\n";
-            echo "<input type='file' id='img' name='img' accept='image/*'><br>\n";
-            echo "<span>Enter product despcriptions: </span>\n";
-            echo "<textarea name='descriptions' id='descriptions' cols='30' rows='10' maxlength='500'></textarea><br>\n";
-            echo "<input type='submit'>\n";
-            echo "</form>\n";
-            echo "</div>\n";
-            echo "</div>\n";
+            echo "<div class='container'>";
+            echo "<div class='row'>";
+            echo "<form enctype='multipart/form-data' action='add_products_page.php' method='POST'>";
+            echo "<span>Enter product name: </span>";
+            echo "<input type='text' id='name' name='name' minlength='10' maxlength='20'><br>";
+            echo "<span>Enter price: </span>";
+            echo "<input type='number' id='price' name='price' min='0'><br>";
+            echo "<span>Select product image: </span>";
+            echo "<input type='file' id='img' name='img' accept='image/*'><br>";
+            echo "<span>Enter product despcriptions: </span>";
+            echo "<textarea name='descriptions' id='descriptions' cols='30' rows='10' maxlength='500'></textarea><br>";
+            echo "<input type='submit' name='submitbutton'>";
+            echo "</form>";
+            echo "</div>";
+            echo "</div>";
             $username = $_SESSION["vendorname"];
             $products_file = fopen("products.txt", "a+") or die("Unable to open file!");
             $id_list = array();
@@ -52,15 +37,19 @@
 
             if (isset($_SESSION["vendorname"])){
                 $username = $_SESSION["vendorname"];
-                if(isset($_POST["name"], $_POST["price"], $_POST["img"], $_POST["descriptions"])){
-                    $pNewInfoString = strval(count($id_list)) . "| " . $_POST["name"] . "|" . strval($_POST["price"]) . "|" . $_POST["img"] . "|" . $_POST["descriptions"] . "|" . $username . "\n";
+                if(isset($_POST["submitbutton"])){
+                    $pNewInfoString = strval(count($id_list)) . "| " . $_POST["name"] . "|" . strval($_POST["price"]) . "|" . $_FILES['img']['name'] . "|" . $_POST["descriptions"] . "|" . $username . "\n";
                     fwrite($products_file, $pNewInfoString);
+
+                    $uploaddir = 'product_images/';
+                    $uploadfile = $uploaddir . basename($_FILES['img']['name']);
+                    move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile);
                 }
             }
         }else{
             echo "<div class='login_options'>";
-            echo "<a href='register.php'>Sign up</a>";
-            echo "<a href='login.php'>Login</a>";
+            echo "<a href='register.php' class='button' id='fbuttons'>Sign up</a>";
+            echo "<a href='login.php' class='button' id='fbuttons'>Login</a>";
             echo "</div>";
             echo "<br>";
             echo "<br>";

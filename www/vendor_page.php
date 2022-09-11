@@ -15,13 +15,13 @@
         if (isset($_SESSION["vendorname"])){
             $username = $_SESSION["vendorname"];
             echo "<div>";
-            echo "<a href='view_products_page.php'>View My Products</a>";
-            echo "<a href='add_products_page.php'>Add New Products</a>";
+            echo "<a href='view_products_page.php' class='button' id='fbuttons'>View My Products</a>";
+            echo "<a href='add_products_page.php' class='button' id='fbuttons'>Add New Products</a>";
             echo "</div>";
         }else{
             echo "<div>";
-            echo "<a href='register.php'>Sign up</a>";
-            echo "<a href='login.php'>Login</a>";
+            echo "<a href='register.php' class='button' id='fbuttons'>Sign up</a>";
+            echo "<a href='login.php' class='button' id='fbuttons'>Login</a>";
             echo "</div>";
         }
     ?>
