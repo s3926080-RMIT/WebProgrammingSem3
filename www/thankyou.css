@@ -1,0 +1,22 @@
+
+.big-box {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:40px;
+    padding-bottom: 70px;
+    height: 200px;
+ }
+
+.big-box .text-container{
+    text-align: center;
+    background-color: goldenrod;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;    
+    vertical-align: middle;
+    line-height: 300px;
+    font-size: 42px;
+ }
